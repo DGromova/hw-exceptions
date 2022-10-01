@@ -12,7 +12,7 @@ public class DataFieldServiceImpl implements DataFieldService {
     @Override
     public boolean field(String login, String password, String confirmPassword) throws RuntimeException {
         if (login.length() > 20) {
-            throw new WrongLoginException("Логин должен быть равен или меньше 20 символов");
+            throw new WrongLoginException("Логин должен быть не больше 20 символов");
         }
         if (!login.matches("\\w{1,20}")) {
             throw new WrongLoginException("Логин может содержать только латинские буквы, цифры и знак подчеркивания");
